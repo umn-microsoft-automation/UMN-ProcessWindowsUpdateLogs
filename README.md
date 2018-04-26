@@ -10,12 +10,12 @@ either using Windows Task Scheduler or built-in functionality through the SIEM.
 The script requires that the following variables be set:
 
 * $logPath
-** This is the location of the Windows Update log files (default is C:\Windows\Logs\WindowsUpdate).
+    * This is the location of the Windows Update log files (default is C:\Windows\Logs\WindowsUpdate).
 * $runTimePath
-** This is the location of the file that tracks the last run time of the script.
+    * This is the location of the file that tracks the last run time of the script.
 * $outputPath
-** This is the path where the output file will be written to (this is overwritten with each run).
+    * This is the path where the output file will be written to (this is overwritten with each run).
 * $eventLogSourceName
-** This is the Windows Event Log source name used by the script when logging to the Application event log.
+    * This is the Windows Event Log source name used by the script when logging to the Application event log.
 * $earlierstBuildtoRun
-** This is the earliest Windows build number that the script will run on. The earliest Windows 10/Server 2016 build number is 10240.
+    * This is the earliest Windows build number that the script will run on. The earliest Windows 10/Server 2016 build number is 10240.
