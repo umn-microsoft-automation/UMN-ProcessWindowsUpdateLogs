@@ -88,14 +88,14 @@ function Invoke-ProcessLatestWindowsUpdateLogs {
                 $lastRunTime = [DateTime]$fileTimeContent
              }
              catch {
-                # If there is a problem accessing the run time file or if the data does not convert into a DateTime then set the last run time to 1/1/18 and log this.
-                $lastRunTime = Get-Date -Date '1/1/18'
+                # If there is a problem accessing the run time file or if the data does not convert into a DateTime then set the last run time to 60 days earlier and log this.
+                $lastRunTime = (Get-Date).AddDays(-60)
                 Write-EventLog -LogName Application -Source $eventLogSource -EventId 11666 -Message "Unable to access $lastRunTimeFilePath or bad last run time."
              }
         }
         else {
-            # If the last run time file doesn't exist set the last run time to 1/1/18 and log this.
-            $lastRunTime = Get-Date -Date '1/1/18'
+            # If the last run time file doesn't exist set the last run time to 60 days earlier and log this.
+            $lastRunTime = (Get-Date).AddDays(-60)
             Write-EventLog -LogName Application -Source $eventLogSource -EventId 11667 -Message "Last run time file $lastRunTimeFilePath does not exist."
         }
 
@@ -128,10 +128,7 @@ function Invoke-ProcessLatestWindowsUpdateLogs {
 }
 
 # Run the script only on systems with OS build numbers greater then $earliestBuildtoRun.
-if([Environment]::OSVersion.Version.Build -gt $earliestBuildtoRun) {
+if([Environment]::OSVersion.Version.Build -ge $earliestBuildtoRun) {
     Invoke-ProcessLatestWindowsUpdateLogs -etlDirectoryPath $logPath -lastRunTimeFilePath $runTimePath -logOutputPath $outputPath -eventLogSource $eventLogSourceName
-    return
-}
-else {
     return
 }
