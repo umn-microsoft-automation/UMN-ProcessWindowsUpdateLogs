@@ -58,9 +58,13 @@ function Invoke-ProcessLatestWindowsUpdateLogs {
    ingested by a SIEM solution.
 #>
     Param (
+        [Parameter(mandatory=$true)]
         [string]$etlDirectoryPath,
+        [Parameter(mandatory=$true)]
         [string]$lastRunTimeFilePath,
+        [Parameter(mandatory=$true)]
         [string]$logOutputPath,
+        [Parameter(mandatory=$true)]
         [string]$eventLogSource
     )
 
