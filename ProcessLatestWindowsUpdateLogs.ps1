@@ -1,6 +1,23 @@
 # ProcessLatestWindowsUpdateLogs.ps1
 # By Craig Woodford (craigw@umn.edu)
-# Last update 4/4/2018
+# Last update 4/26/2018
+
+###
+# Copyright 2017 University of Minnesota, Office of Information Technology
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+###
 
 # This script is used to convert Windows Update logs for Server 2016 systems
 # into text-based logs for ingestion into a SIEM system such as Splunk. The
