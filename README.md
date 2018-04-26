@@ -1,11 +1,6 @@
 # UMN-ProcessWindowsUpdateLogs
 
-This script is used to convert Windows Update logs for Server 2016 systems
-into text-based logs for ingestion into a SIEM system such as Splunk. The script 
-is designed to run on a regular basis so that only logs that have not been 
-converted since the last script run-time are processed. The script needs to be 
-run with administrative rights. This script should be set to automatically run 
-either using Windows Task Scheduler or built-in functionality through the SIEM.
+This script is used to convert Windows Update logs for Server 2016 systems into text-based logs for ingestion into a SIEM system such as Splunk. The script is designed to run on a regular basis so that only logs that have not been converted since the last script run-time are processed. The script needs to be run with administrative rights. This script should be set to automatically run either using Windows Task Scheduler or built-in functionality through the SIEM.
 
 The script requires that the following variables be set:
 
